@@ -7,6 +7,7 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse
 from django.test import Client
 
+
 class AdminSiteTests(TestCase):
     """Tests for Django admin"""
 
@@ -27,7 +28,7 @@ class AdminSiteTests(TestCase):
 
     def test_users_list(self):
         """Test that users are listed on page"""
-        url=reverse('admin:core_user_changelist')
+        url = reverse('admin:core_user_changelist')
         res = self.client.get(url)
 
         self.assertContains(res, self.user.name)
